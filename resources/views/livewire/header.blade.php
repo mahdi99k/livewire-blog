@@ -11,9 +11,22 @@
 
             <li class="mx-3 cursor_pointer_text_shadow font_1_1">درباره ما<span></span></li>
 
-            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('register') }}">ثبت نام</a><span></span></li>
 
-            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('login') }}">ورود</a><span></span></li>
+            @if (auth()->check())  {{-- چک کن که لاگین کرده یا نه --}}
+
+            <li class="mx-3 cursor_pointer_text_shadow font_1_1">{{ auth()->user()->name }}<span></span></li>
+            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="/logout" class="text-danger">خروج</a><span></span></li>
+
+            {{--<form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit">خروج</button>
+            </form>--}}
+
+            @else
+                <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('register') }}">ثبت نام</a><span></span></li>
+
+                <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('login') }}">ورود</a><span></span></li>
+            @endif
 
 
             <li class="d-block d-md-none mx-4">

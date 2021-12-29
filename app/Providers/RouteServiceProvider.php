@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';  // اگر کاربر لاگین نکرده بود نتونه بره صفحه ورود و ثبت نام ببینه برش گردون صفحه اصلی
 
     /**
      * The controller namespace for the application.

@@ -10,7 +10,7 @@
             <h5 class="text-center">فرم ثبت نام</h5>
 
             <div class="form-group row justify-content-center">
-                <input type="text" name="email" class="form-control rounded_5 col-10 col-md-8  shadow" placeholder="ایمیل" wire:model="data.email"/>{{-- array --}}
+                <input type="email" name="email" class="form-control rounded_5 col-10 col-md-8  shadow" placeholder="ایمیل" wire:model="data.email"/>{{-- array --}}
             </div>
             @error('data.email')
                 <small class="d-block text-danger w-100 text-center">{{ $message }}</small>

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Index;
 
 use App\Models\Article;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class Index extends Component
@@ -17,6 +18,10 @@ class Index extends Component
         $this->bestArticles = Article::query()->where('is_best' , 1)->take(4)->skip(0)->get();
     }
 
+    /*public function store(Request $request) {
+        auth()->logout();
+        return redirect()->route('login');
+    }*/
 
     public function render()
     {

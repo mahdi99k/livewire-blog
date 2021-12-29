@@ -22,13 +22,16 @@ class Register extends Component
     {
         $this->validate([
             'data.email' => 'required|email|max:100|unique:users,email',
-            'data.password' => 'required|string|min:6|max:50|confirmed',  //confirmed بیا چک کن هر دوتا پسوورد یکی باشه | (password_confirmation) باید نام اینپوت حتما
+            //فقط حروف کوچک و بزرگ انگلیسی و اعداد و اتساین و دالر و هشتک و. //confirmed بیا چک کن هر دوتا پسوورد یکی باشه | (password_confirmation) باید نام اینپوت حتما
+            'data.password' => 'required|string|min:6|max:50|confirmed|regex:/^[a-zA-Z0-9@$#^%&*!]+$/u',
             'data.policy' => 'required',
         ]);
 
         $user = new User();
         $user->email = $this->data['email'];
         $user->password = Hash::make($this->data['password']);
+//      $user->name = '' ;
+//      $user->lastname = '';
         $user->gender = 1;
         $user->is_admin = 0;
         $user->role = 'user';
