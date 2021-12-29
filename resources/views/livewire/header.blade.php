@@ -3,13 +3,18 @@
 
         <ul class="d-flex menu_top align-items-center">
 
-            <li class="logo_top animate__animated animate__flip"><img src="/assets/images/logo.png" /></li>
+            <li class="logo_top animate__animated animate__flip"><a href="{{ route('index') }}"><img src="{{ asset('./assets/images/logo.png') }}" /></a></li>
+
+            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('index') }}">خانه</a><span></span></li>
 
             <li class="mx-3 cursor_pointer_text_shadow font_1_1">مقالات<span></span></li>
 
             <li class="mx-3 cursor_pointer_text_shadow font_1_1">درباره ما<span></span></li>
 
-            <li class="mx-3 cursor_pointer_text_shadow font_1_1">ورود<span></span></li>
+            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('register') }}">ثبت نام</a><span></span></li>
+
+            <li class="mx-3 cursor_pointer_text_shadow font_1_1"><a href="{{ route('login') }}">ورود</a><span></span></li>
+
 
             <li class="d-block d-md-none mx-4">
                 <a href="/" class="fas fa-search fa-2x cursor_pointer_text_shadow "></a>

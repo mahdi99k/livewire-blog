@@ -4,6 +4,10 @@
 
     <!-- -------------------- top banner ------------------------- -->
 
+    @if (session('login'))
+        <h4 class="text-center text-primary">{{ session('login') }}</h4>
+    @endif
+
     <div class=" row top_header_banner align-items-center justify-content-center">
         <div
             class="bg_blur_light p-4 bg_blur_light rounded_5 d-none d-md-block animate__animated animate__fadeInDown animate__delay-1s ">
